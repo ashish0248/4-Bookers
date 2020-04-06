@@ -1,10 +1,10 @@
-class BookersController < ApplicationController
+class BooksController < ApplicationController
+  def top
+  end
+
   def index
   	@books = Book.all
   	@book = Book.new
-  end
-
-  def top
   end
 
   def show
@@ -23,7 +23,7 @@ class BookersController < ApplicationController
 
   def create
   	@book = Book.new(book_params)
-    @book = Book.all
+    @books = Book.all
     if @book.save
       flash[:success] = "Book was successfully created."
       redirect_to book_path(@book.id)
